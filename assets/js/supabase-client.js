@@ -2,8 +2,8 @@
  * Integración Client-Side Simplificada en Español con Supabase para Tacos Marrakech
  */
 
-const SUPABASE_URL = 'https://feikeytbrxtsooaxsvjt.supabase.co';
-const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlaWtleXRicnh0c29vYXhzdmp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMjUyMzUsImV4cCI6MjA5NjcwMTIzNX0.8JCgne4hkGDU3P3Zh1eYXSUR2G12vbaS_eIi5ifliXI';
+const SUPABASE_URL = 'https://xraatkirsryjgnmevyxb.supabase.co';
+const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'sb_publishable_xBhbZsOlrLqNI5PzIma48Q_-SXx5QXT';
 
 let supabaseClient = null;
 

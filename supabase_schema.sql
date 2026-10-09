@@ -150,7 +150,7 @@ CREATE TABLE public.consentimiento_cookies (
     creado_en TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- PERMISOS Y SEGURIDAD RLS
+-- PERMISOS Y SEGURIDAD RLS (Row Level Security)
 ALTER TABLE public.informacion_y_footer ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.fotos_hero ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.fotos_comida ENABLE ROW LEVEL SECURITY;
@@ -160,13 +160,27 @@ ALTER TABLE public.opiniones_clientes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.reservas ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.consentimiento_cookies ENABLE ROW LEVEL SECURITY;
 
+-- 1. Políticas de lectura pública (Frontend)
 CREATE POLICY "Lectura publica info" ON public.informacion_y_footer FOR SELECT TO public USING (true);
 CREATE POLICY "Lectura publica hero" ON public.fotos_hero FOR SELECT TO public USING (activa = true);
 CREATE POLICY "Lectura publica comida" ON public.fotos_comida FOR SELECT TO public USING (activo = true);
 CREATE POLICY "Lectura publica carta" ON public.carta_digital FOR SELECT TO public USING (true);
 CREATE POLICY "Lectura publica locales" ON public.locales_restaurante FOR SELECT TO public USING (activo = true);
 CREATE POLICY "Lectura publica opiniones" ON public.opiniones_clientes FOR SELECT TO public USING (publicada = true);
-CREATE POLICY "Lectura publica reservas" ON public.reservas FOR SELECT TO public USING (true);
-CREATE POLICY "Crear reservas" ON public.reservas FOR INSERT TO public WITH CHECK (true);
+
+-- 2. Políticas de reservas (Privacidad RGPD: Inserción pública anónima, Lectura/Edición solo Administradores autenticados)
+CREATE POLICY "Crear reservas publico" ON public.reservas FOR INSERT TO public WITH CHECK (true);
+CREATE POLICY "Gestion reservas autenticado" ON public.reservas FOR ALL TO authenticated USING (true) WITH CHECK (true);
+
+-- 3. Políticas de cookies (Inserción pública anónima, Lectura/Auditoría solo Administradores autenticados)
 CREATE POLICY "Guardar consentimiento cookies" ON public.consentimiento_cookies FOR INSERT TO public WITH CHECK (true);
-CREATE POLICY "Lectura consentimiento cookies" ON public.consentimiento_cookies FOR SELECT TO public USING (true);
+CREATE POLICY "Gestion cookies autenticado" ON public.consentimiento_cookies FOR ALL TO authenticated USING (true) WITH CHECK (true);
+
+-- 4. Políticas de administración de contenidos (Solo administradores autenticados)
+CREATE POLICY "Gestion info autenticado" ON public.informacion_y_footer FOR ALL TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Gestion hero autenticado" ON public.fotos_hero FOR ALL TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Gestion comida autenticado" ON public.fotos_comida FOR ALL TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Gestion carta autenticado" ON public.carta_digital FOR ALL TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Gestion locales autenticado" ON public.locales_restaurante FOR ALL TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Gestion opiniones autenticado" ON public.opiniones_clientes FOR ALL TO authenticated USING (true) WITH CHECK (true);
+

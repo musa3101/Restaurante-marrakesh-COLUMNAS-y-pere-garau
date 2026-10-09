@@ -1,48 +1,43 @@
 # Últimos Cambios de la Sesión
 
 ## ¿Qué se ha hecho hoy?
-1. **Desarrollo Completo de la Sección Pere Garau (`/peregarau`)**:
-   - **Landing Page (`peregarau/index.html`)**:
-     * Hero despejado con foto real iluminada, título y botón `VER CARTA DIGITAL` en el extremo inferior.
-     * Carrusel Swiper cinematográfico (5s por foto, fundido cruzado de 2.2s y zoom Ken Burns).
-     * Preloader de 3.5s con estrella marroquí y letras `L O A D I N G` en rojo, dorado y verde esmeralda al derecho, más el sello `PERE GARAU • PALMA`.
-     * Cabecera con menú hamburguesa desplegable (tipografía Cinzel, bloqueo de scroll) y botón oficial a TikTok (`https://vm.tiktok.com/ZN8eSq29A/`).
-     * Teléfono y WhatsApp actualizados al número del dueño (+34 632 69 21 91).
-   - **Carta Digital QR (`peregarau/menu.html`)**:
-     * Carta ultra limpia multi-idioma (ES, EN, FR) para escaneo en mesa, sin estorbos ni textos sobrepuestos.
-   - **Favicon & Vista Previa Open Graph**:
-     * Configurado Favicon oficial con el logo redondo y etiquetas Open Graph (`og:image`, `og:title`, etc.) para una vista previa impecable al compartir por WhatsApp o redes sociales.
-   - **Microsoft Clarity Dedicado para Pere Garau**:
-     * Integrado el código oficial de analítica e impresiones calientes de Microsoft Clarity (`xuj345jznv`) en `peregarau/index.html` y `peregarau/menu.html`.
+1. **Verificación de Google Search Console**:
+   - Integrada la etiqueta oficial de verificación (`google-site-verification`) en los archivos principales y cartas de ambas webs: Columnas ([index.html](file:///Users/musa/Documents/Restaurante-marrakesh-COLUMNAS-y-pere-garau/index.html), [menu.html](file:///Users/musa/Documents/Restaurante-marrakesh-COLUMNAS-y-pere-garau/menu.html)) y Pere Garau ([peregarau/index.html](file:///Users/musa/Documents/Restaurante-marrakesh-COLUMNAS-y-pere-garau/peregarau/index.html), [peregarau/menu.html](file:///Users/musa/Documents/Restaurante-marrakesh-COLUMNAS-y-pere-garau/peregarau/menu.html)).
+   
+2. **Infraestructura SEO para Indexación en Google**:
+   - Creado y desplegado [sitemap.xml](file:///Users/musa/Documents/Restaurante-marrakesh-COLUMNAS-y-pere-garau/sitemap.xml) con las rutas oficiales (ya enviado a Search Console).
+   - Creado y desplegado [robots.txt](file:///Users/musa/Documents/Restaurante-marrakesh-COLUMNAS-y-pere-garau/robots.txt) con permisos completos para Googlebot y enlace al sitemap.
+   - Añadidas etiquetas canónicas (`rel="canonical"`) y datos estructurados Schema.org (`Restaurant` JSON-LD) para SEO local en Palma.
 
-2. **Ajustes en la Web Principal (`index.html` y `menu.html`)**:
-   - **Cambio de Nombre de Tienda**: Cambiada la etiqueta de *"Llevant"* por **`Plaza Columnas`** (`Francesc Barceló i Combis, 4`) en la sección "Dónde Estamos".
-   - **Limpieza de Carta (`menu.html`)**: Eliminadas las pestañas flotantes y las insignias de texto sobrepuestas sobre las fotos de la carta.
+3. **Favicons Redondos en Alta Resolución (Retina / 4K)**:
+   - Aislado el plato dorado en círculo perfecto sin bordes marrones ([assets/logo_circular.png](file:///Users/musa/Documents/Restaurante-marrakesh-COLUMNAS-y-pere-garau/assets/logo_circular.png)) con fondo 100% transparente.
+   - Creado [assets/favicon.png](file:///Users/musa/Documents/Restaurante-marrakesh-COLUMNAS-y-pere-garau/assets/favicon.png) en 512x512 px y actualizado `favicon-48x48.png` a calidad Retina (192 px) para evitar pixelado al hacer zoom.
+   - Generados los archivos estándar [favicon.ico](file:///Users/musa/Documents/Restaurante-marrakesh-COLUMNAS-y-pere-garau/favicon.ico) y [assets/apple-touch-icon.png](file:///Users/musa/Documents/Restaurante-marrakesh-COLUMNAS-y-pere-garau/assets/apple-touch-icon.png).
 
-3. **Documentación & Repositorio (`README.md`)**:
-   - Creado un `README.md` profesional con la **Tabla de Enlaces Oficiales de Cloudflare Pages** destacados en la portada del repositorio en GitHub y GitLab.
-
-4. **Fusión & Despliegue en Vivo en Cloudflare Pages**:
-   - Código auditado, fusionado de `dev` a `main` y publicado en producción en **GitHub**, **GitLab** y **Cloudflare Pages**:
-     * 🌐 Web Principal: [`tacosmarrakech.pages.dev`](https://tacosmarrakech.pages.dev/)
-     * 🕌 Landing Pere Garau: [`tacosmarrakech.pages.dev/peregarau/`](https://tacosmarrakech.pages.dev/peregarau/)
-     * 📲 Carta Digital QR: [`tacosmarrakech.pages.dev/peregarau/menu`](https://tacosmarrakech.pages.dev/peregarau/menu)
-     * 📺 Web Smart TV: [`tacosmarrakech.pages.dev/tv/`](https://tacosmarrakech.pages.dev/tv/)
+4. **Keep-Alive de Supabase**:
+   - Integrado script ligero en Pere Garau y Smart TV para mantener la base de datos activa sin alterar el diseño visual.
 
 ## Archivos modificados y creados
-- `peregarau/index.html` (Landing page del restaurante de Pere Garau + Clarity `xuj345jznv`).
-- `peregarau/menu.html` (Carta digital para código QR + Clarity `xuj345jznv`).
-- `menu.html` (Carta digital de la web principal).
-- `index.html` (Cambio a Plaza Columnas y enlace a Pere Garau).
-- `README.md` (Tabla de enlaces oficiales en la portada).
-- `docs/SESSION_LATEST_ES.md` (Registro detallado de cambios de la sesión).
+- `index.html` (Meta de verificación, canonical, Schema.org y favicons en alta resolución).
+- `menu.html` (Meta de verificación y favicons actualizados).
+- `peregarau/index.html` (Meta de verificación, canonical, Schema.org, favicons y keep-alive).
+- `peregarau/menu.html` (Meta de verificación, favicons y keep-alive).
+- `tv/index.html` (Favicons y keep-alive).
+- `sitemap.xml` (Mapa del sitio para Google).
+- `robots.txt` (Reglas de rastreo).
+- `assets/logo_circular.png` (Maestro redondo transparente).
+- `assets/favicon.png` (512x512 px).
+- `assets/favicon-48x48.png` (192 px Retina).
+- `favicon.ico` y `peregarau/favicon.ico`.
+- `docs/SESSION_LATEST_ES.md` (Registro de sesión).
 - `docs/ROADMAP.md` (Estado del proyecto).
 
 ## Problemas solucionados
-- Creada la landing e infraestructura para Pere Garau con carta digital QR dedicada sin alterar la web principal.
-- Corregida la orientación e intervalos del preloader.
-- Configurada la vista previa de WhatsApp / Open Graph y Favicons oficiales.
-- Integrado Microsoft Clarity específico para el proyecto `tacos marra- peregarau`.
+- Verificación de propiedad en Google Search Console completada.
+- Páginas preparadas para indexación con sitemap y directivas robots.
+- Favicon cuadrado y pixelado reemplazado por versión redonda nítida.
 
 ## Qué queda pendiente
-- Imprimir pegatinas físicas de código QR apuntando a `https://tacosmarrakech.pages.dev/peregarau/menu`.
+- Generar e imprimir pegatinas de código QR para las mesas de Pere Garau (`peregarau/menu.html`).
+- Seguimiento de indexación en Google Search Console tras el procesado del sitemap.
+- Comprobación del formulario de reservas con Supabase.

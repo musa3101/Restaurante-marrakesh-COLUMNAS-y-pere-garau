@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!supabaseClient) return;
 
   try {
+    // Si estamos en Pere Garau o Smart TV, registrar actividad keep-alive sin alterar su maquetación local
+    const isSpecialPage = window.location.pathname.includes('/peregarau') || window.location.pathname.includes('/tv');
+    if (isSpecialPage) {
+      await supabaseClient.from('informacion_y_footer').select('id').limit(1);
+      return;
+    }
+
     await Promise.all([
       cargarInformacionYFooter(),
       cargarFotosHero(),

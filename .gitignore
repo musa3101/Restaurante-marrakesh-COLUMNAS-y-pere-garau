@@ -6,3 +6,5 @@
 ehthumbs.db
 Thumbs.db
 *.MP4
+.env
+.env.*
